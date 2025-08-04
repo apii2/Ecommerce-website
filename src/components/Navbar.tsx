@@ -57,7 +57,7 @@ export default function Navbar() {
           </NavigationMenuItem>
           :
           <NavigationMenuItem key={item.name}>
-            <NavigationMenuLink asChild className={`font-medium ${path===item.url ? 'text-accent-foreground' : ''}`}>
+            <NavigationMenuLink asChild className={path===item.url ? 'text-accent-foreground' : ''}>
               <Link href={item.url || ''}>{item.name}</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>

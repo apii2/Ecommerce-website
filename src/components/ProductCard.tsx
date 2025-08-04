@@ -1,0 +1,29 @@
+import {
+  Card,
+  CardContent,
+  CardTitle,
+  CardDescription
+} from "@/components/ui/card"
+import { ProductInterface } from "@/type/ProductInterface"
+import Link from "next/link"
+import React from "react"
+
+export const ProductCard:React.FC<{item: ProductInterface}> = ({item})=> {
+  return (
+    <Card>
+      <div className="flex items-center justify-center bg-white py-5">
+        <img src={item.image} alt={item.title} className="w-45 h-45 object-contain"/>
+      </div>
+
+      <CardContent>
+        <CardTitle>
+          <Link href={`/${item.title}`}>
+            {item.title.length>26 ? item.title.slice(0,22)+'...' : item.title}
+          </Link>
+        </CardTitle>
+        <CardDescription>{item.category}</CardDescription>
+        <p className="font-bold">${item.price}</p>
+      </CardContent>
+    </Card>
+  )
+}
