@@ -44,14 +44,14 @@ export default function Home() {
   return (
     <main className='mt-22'>
       <section style={{ backgroundImage: `url(${BgDesktop.src})` }}
-        className="w-full h-152 bg-no-repeat bg-[78%_0%] lg:bg-top bg-cover bg-fixed flex items-center px-6 md:px-8 lg:px-24 xl:px-30">
+        className="w-full h-152 bg-no-repeat bg-[83%_0%] sm:bg-[78%_0%] lg:bg-top bg-cover bg-fixed flex items-center px-4 xs:px-8 lg:px-24 xl:px-30">
         <div className="text-white text-center lg:p-10 rounded-xl max-w-xl">
           <h1 className="text-4xl font-bold mb-4">Welcome to Our Store</h1>
           <p className="text-lg">We offer quality service and fast delivery</p>
         </div>
       </section>
 
-      <section className="px-6 md:px-8 lg:px-24 xl:px-30 py-12">
+      <section className="px-4 xs:px-8 lg:px-24 xl:px-30 py-12">
         <h2 className="text-5xl font-bold text-center mb-12 text-primary-foreground">Why Choose Us</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10">

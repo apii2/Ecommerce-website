@@ -14,7 +14,7 @@ export default function ProductSection() {
   const {products, fetchProducts} = useStore();
 
   return (
-    <section className='md:px-8 lg:px-24 xl:px-30 py-12 flex flex-col items-center'>
+    <section className='px-4 xs:px-8 lg:px-24 xl:px-30 py-12 flex flex-col items-center'>
       <h2 className="text-5xl font-bold text-center mb-12 text-primary-foreground">Our products</h2>
 
       <Carousel opts={{loop: true}} plugins={[Autoplay({delay: 3000, stopOnMouseEnter: true, stopOnInteraction: false})]}>

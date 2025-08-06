@@ -1,7 +1,10 @@
+import { NavbarData } from "@/json/NavbarData";
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="text-white">
-      <section className="bg-primary flex flex-col md:flex-row justify-between gap-8 py-10 px-8 lg:px-24 xl:px-30">
+      <section className="bg-primary flex flex-col md:flex-row justify-between gap-8 py-10 px-4 xs:px-8 lg:px-24 xl:px-30">
         <div className="">
           <h1 className="text-5xl font-black uppercase mb-8">Venture</h1>
 
@@ -16,10 +19,13 @@ export default function Footer() {
         <div>
           <h1 className="font-bold text-lg uppercase mb-2">Menu</h1>
           <ul className="leading-5.5">
-            <li>Home</li>
-            <li>About</li>
-            <li>Testimonial</li>
-            <li>Products</li>
+            {NavbarData.map(item=>(
+              <li key={item.name}>
+                <Link href={item.url || ''}>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -27,13 +33,13 @@ export default function Footer() {
           <h1 className="font-bold text-lg uppercase mb-2">Newsletter</h1>
 
           <form className="w-fit md:w-full flex border border-secondary-foreground bg-secondary-foreground text-primary-foreground">
-            <input type="text" name="email" id="name" placeholder="Enter Your Mail" className="bg-white py-2 ps-4 w-50 md:w-auto" />
+            <input type="text" name="email" id="name" placeholder="Enter Your Mail" className="bg-white py-2 ps-4 w-full md:w-auto" />
             <button className="p-2 font-semibold w-min">Subscribe</button>
           </form>
         </div>
       </section>
 
-      <section className="bg-primary-foreground md:px-8 lg:px-24 xl:px-30 flex justify-center py-4">
+      <section className="bg-primary-foreground flex justify-center py-4 px-4 xs:px-8 lg:px-24 xl:px-30 text-center">
         <p>&copy; 2025 All Rights Reserved By <span className="text-accent">Venture</span></p>
       </section>
     </footer>

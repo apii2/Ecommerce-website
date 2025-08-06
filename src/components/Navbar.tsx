@@ -7,42 +7,18 @@ import {
   NavigationMenuContent, 
   NavigationMenuTrigger 
 } from "@/components/ui/navigation-menu"
-import { NavbarInterface } from "@/type/NavbarInterface"
 import Link from "next/link"
 import { CartIcon } from "./CartIcon"
 import { usePathname } from "next/navigation"
+import { NavbarData } from "@/json/NavbarData"
 
 export default function Navbar() {
-  const data:NavbarInterface[] = [
-    {
-      name: 'Home',
-      url: '/'
-    },
-    {
-      name: 'Pages',
-      children: [
-        {
-          name: 'About',
-          url: '/about'
-        },
-        {
-          name: 'Testimonial',
-          url: '/testimonial'
-        }
-      ]
-    },
-    {
-      name: 'Products',
-      url: '/products'
-    }
-  ]
-
   const path = usePathname();
 
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        {data.map(item=>(
+        {NavbarData.map(item=>(
           item.children?.length 
           ?
           <NavigationMenuItem key={item.name}>
