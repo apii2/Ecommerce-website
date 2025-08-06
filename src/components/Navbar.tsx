@@ -8,7 +8,7 @@ import {
   NavigationMenuTrigger 
 } from "@/components/ui/navigation-menu"
 import Link from "next/link"
-import { CartIcon } from "./CartIcon"
+import { CartIcon } from "./icons/CartIcon"
 import { usePathname } from "next/navigation"
 import { NavbarData } from "@/json/NavbarData"
 
