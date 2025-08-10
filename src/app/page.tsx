@@ -9,6 +9,7 @@ import ProductSection from '@/components/ProductSection';
 import { useEffect } from 'react';
 import { useStore } from '@/lib/store';
 import dynamic from 'next/dynamic';
+import CategorySection from '@/components/CategorySection';
 
 // const ProductSection = dynamic(()=>import('@/components/ProductSection'),{ssr: false});
 
@@ -71,6 +72,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <CategorySection />
 
       <ProductSection />
     </main>

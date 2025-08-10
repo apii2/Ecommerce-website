@@ -44,7 +44,7 @@ export const AboutIcon:React.FC<PropsType> = (props) => {
 export const ContactIcon:React.FC<PropsType> = (props) => {
   return (
     <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
-      viewBox="0 0 72 72" enable-background="new 0 0 72 72" xmlSpace="preserve" {...props}>
+      viewBox="0 0 72 72" enableBackground="new 0 0 72 72" xmlSpace="preserve" {...props}>
       <g>
         <path d="M56.068,4H15.932C12.104,4,9,7.104,9,10.932v50.136C9,64.896,12.104,68,15.932,68h40.136C59.896,68,63,64.896,63,61.068
           V10.932C63,7.104,59.896,4,56.068,4z M37.993,8h10v15.844l-4.563-2.188c-0.138-0.066-0.283-0.099-0.43-0.099
