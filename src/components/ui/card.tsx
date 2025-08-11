@@ -32,7 +32,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-title"
-      className={cn("leading-none font-bold cursor-pointer hover:text-accent-foreground", className)}
+      className={cn("leading-none font-bold cursor-pointer group-hover:text-accent-foreground transition-colors", className)}
       {...props}
     />
   )

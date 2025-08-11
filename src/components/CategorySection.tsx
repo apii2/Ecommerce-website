@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { useStore } from '@/lib/store'
 import MenImage from '@/assets/images/men.jpg';
@@ -9,17 +10,16 @@ import Link from 'next/link';
 
 export default function CategorySection() {
   const {products} = useStore();
-
-  const categories = products.map(item=>item.category).filter((value, index, array)=>{
-    return array.indexOf(value) === index;
-  });
-
-  const cateImg:{[key:string]: StaticImageData} = {
+  const categoriesSet = new Set(products.map(item=>item.category));
+  
+  const match:{[key:string]: StaticImageData} ={
     "men's clothing": MenImage,
     "jewelery": JewelImage,
     "electronics": ElectronicImage,
     "women's clothing": WomenImage
   }
+
+  const categories = Array.from(categoriesSet).map(item=>({name:item,image: match[item] || null}));
 
   console.log(categories);
   return (
@@ -28,10 +28,10 @@ export default function CategorySection() {
 
       <div className='grid grid-cols-2 sm:grid-cols-4 gap-5 lg:gap-10'>
         {categories.map(item=>(
-          <Link href='/' key={item}>
+          <Link href={`/products?category=${item.name}`} key={item.name}>
             <div className='flex flex-col items-center justify-center gap-3 group'>
-              <Image src={cateImg[item]} alt={item+' image'} className='w-35 rounded-full group-hover:shadow-2xl shadow-primary-foreground' />
-              <p className='text-lg text-white font-semibold capitalize text-center'>{item}</p>
+              <Image src={item.image} alt={item.name +' image'} className='w-35 rounded-full group-hover:shadow-2xl shadow-primary-foreground' />
+              <p className='text-lg text-white font-semibold capitalize text-center'>{item.name}</p>
             </div>
           </Link>
         ))}

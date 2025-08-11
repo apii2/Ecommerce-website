@@ -6,10 +6,12 @@ export default function Footer() {
     <footer className="text-white">
       <section className="bg-primary flex flex-col md:flex-row justify-between gap-8 py-10 px-4 xs:px-8 lg:px-24 xl:px-30">
         <div className="">
-          <h1 className="text-5xl font-black uppercase mb-8">Venture</h1>
+          <header className="uppercase text-5xl font-black bg-gradient-to-br from-primary to-accent-foreground text-transparent bg-clip-text">
+            <Link href='/'>Venture</Link>
+          </header>
 
-          <h2 className="font-bold text-lg uppercase mb-2">Contact</h2>
-          <div className="leading-5.5">
+          <h2 className="font-bold text-lg uppercase mt-8 mb-2">Contact</h2>
+          <div>
             <p>28 White tower, Street Name New York City, USA</p>
             <p>+91 987 654 3210</p>
             <p>example@gmail.com</p>
@@ -18,10 +20,10 @@ export default function Footer() {
 
         <div>
           <h1 className="font-bold text-lg uppercase mb-2">Menu</h1>
-          <ul className="leading-5.5">
+          <ul>
             {NavbarData.map(item=>(
               <li key={item.name}>
-                <Link href={item.url || ''}>
+                <Link href={item.url || ''} className="hover:text-accent-foreground">
                   {item.name}
                 </Link>
               </li>

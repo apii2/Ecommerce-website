@@ -3,6 +3,7 @@ import { Geist, Nunito} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ProductProvider } from "@/lib/store";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,9 +29,11 @@ export default function RootLayout({
       <body
         className={`${nunito.variable} ${geistSans.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <ProductProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ProductProvider>
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+'use client'
 import { useStore } from '@/lib/store'
 import React from 'react'
 import {
@@ -11,7 +12,7 @@ import { ProductCard } from './ProductCard';
 import Autoplay from 'embla-carousel-autoplay';
 
 export default function ProductSection() {
-  const {products, fetchProducts} = useStore();
+  const {products} = useStore();
 
   return (
     <section className='px-4 xs:px-8 lg:px-24 xl:px-30 py-12 flex flex-col items-center'>

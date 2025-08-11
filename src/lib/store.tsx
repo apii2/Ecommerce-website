@@ -1,5 +1,7 @@
+'use client'
 import { create } from "zustand";
 import { ProductInterface } from "@/type/ProductInterface";
+import { ReactNode, useEffect } from "react";
 
 interface Store {
   products: ProductInterface[],
@@ -16,3 +18,16 @@ export const useStore = create<Store>((set)=>({
     set({products: updatedData});
   },
 }))
+
+export function ProductProvider({children}:{children: ReactNode}){
+  const {fetchProducts} = useStore();
+  useEffect(()=>{
+    fetchProducts();
+  },[]);
+
+  return(
+    <>
+    {children}
+    </>
+  )
+}
