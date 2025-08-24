@@ -13,7 +13,7 @@ export const ProductCard:React.FC<{item: ProductInterface}> = ({item})=> {
     <Link href={`/products/${item.title}`} className="group">
       <Card>
         <div className="flex items-center justify-center bg-white py-5">
-          <img src={item.image} alt={item.title} className="w-45 h-45 object-contain"/>
+          <img src={item.image} alt={item.title} className="w-45 h-45 object-contain group-hover:scale-110 transition-all"/>
         </div>
 
         <CardContent>
